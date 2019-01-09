@@ -10,6 +10,8 @@ let h1 = document.querySelector('.header h1');
 let up = document.querySelector('.up');
 let seta = document.querySelector('.up i');
 
+let sec2 = document.querySelector('.second-section');
+
 // Função de onclick para aparecer os links de navegação ao clicar no menu
 menu.onclick = () => {
     for(let barrinha of barrinhas){
@@ -64,6 +66,14 @@ body.onscroll = () => {
     else{
         up.style.transform = 'translateY(200px)';
     }
+
+    if(scrollY >= 658){
+        sec2.style.backgroundAttachment = 'fixed';
+    }
+
+    else{
+        sec2.style.backgroundAttachment = 'scroll';
+    }
 }
 
 // Dar animação a seta de "UP"
@@ -77,7 +87,6 @@ up.onmouseout = () => {
  
 // Volta para o topo da página
 up.onclick = () => {
-    // location.href = '#first-section' 
      window.scrollTo(0, 0);
     
 }
